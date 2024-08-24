@@ -1,0 +1,25 @@
+name: Generate ASCII Artwork
+
+on: push
+
+jobs:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Install Cowsay Program
+      run: sudo apt-get install cowsay -y
+
+    - name: Execute Cowsay CMD
+      run: cowsay -f whale "Run for cover, I am Whale..." >> whale.txt
+
+    - name: Test File Exists
+      run: grep -i "whale" whale.txt
+
+    - name: Read File
+      run: cat whale.txt
+
+    - name: List Repo Files
+      run: ls -la
