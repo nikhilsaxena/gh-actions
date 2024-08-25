@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Install Cowsay Program
       run: sudo apt-get install cowsay -y
@@ -20,7 +20,7 @@ jobs:
   
   test_job:
     needs: build_job
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Download Artifact(txt file)
       uses: actions/download-artifact@v3
@@ -32,7 +32,7 @@ jobs:
 
   deploy_job:
     needs: test_job
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Download Artifact(txt file)
       uses: actions/download-artifact@v3
