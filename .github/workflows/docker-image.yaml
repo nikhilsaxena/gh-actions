@@ -1,6 +1,8 @@
 name: Docker Image
 
-on: push
+on: 
+  schedule:
+   - cron: "*/1 * * * *"
 
 env:
   DOCKER_REGISTRY: dockerhub.io
