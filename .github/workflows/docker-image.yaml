@@ -1,8 +1,7 @@
 name: Docker Image
 
 on: 
-  schedule:
-   - cron: "*/1 * * * *"
+  workflow_dispatch
 
 env:
   DOCKER_REGISTRY: dockerhub.io
